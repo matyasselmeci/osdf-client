@@ -114,7 +114,7 @@ nfpms:
     formats:
       - deb
       - rpm
-    bindir: usr/libexec/condor
+    bindir: /usr/libexec/condor
     release: 1
     section: default
     priority: extra
@@ -122,13 +122,13 @@ nfpms:
       rpm:
         contents:
           - src: LICENSE.txt
-            dst: "usr/share/doc/{{ .PackageName }}-{{ .Version }}/LICENSE.txt"
+            dst: "/usr/share/doc/{{ .PackageName }}-{{ .Version }}/LICENSE.txt"
             type: doc
           - src: README.md
-            dst: "usr/share/doc/{{ .PackageName }}-{{ .Version }}/README.md"
+            dst: "/usr/share/doc/{{ .PackageName }}-{{ .Version }}/README.md"
             type: doc
           - src: resources/10-stash-plugin.conf
-            dst: "etc/condor/config.d/10-stash-plugin.conf"
+            dst: "/etc/condor/config.d/10-stash-plugin.conf"
             type: config|noreplace
         replacements:
           amd64: x86_64
@@ -163,7 +163,7 @@ nfpms:
       - rpm
     replaces:
       - stashcache-client < 6.4.0
-    bindir: usr/bin
+    bindir: /usr/bin
     release: 1
     section: default
     priority: extra
@@ -171,10 +171,10 @@ nfpms:
       rpm:
         contents:
           - src: LICENSE.txt
-            dst: "usr/share/doc/{{ .PackageName }}-{{ .Version }}/LICENSE.txt"
+            dst: "/usr/share/doc/{{ .PackageName }}-{{ .Version }}/LICENSE.txt"
             type: doc
           - src: README.md
-            dst: "usr/share/doc/{{ .PackageName }}-{{ .Version }}/README.md"
+            dst: "/usr/share/doc/{{ .PackageName }}-{{ .Version }}/README.md"
             type: doc
         replacements:
           amd64: x86_64
